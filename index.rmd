@@ -1,0 +1,74 @@
+---
+title: "Incarceration Trends"
+author: "Benjamin Kim"
+date: "11/24/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(ggplot2)
+library(tidyverse)
+library(hrbrthemes)
+library(viridis)
+library(maps)
+library(mapproj)
+library(patchwork)
+library(usdata)
+library(dplyr)
+source("analysis.R")
+```
+## Introduction
+In this project we are analyzing the Vera Institute of Justice Incarceration Trends data set. While looking for notable patterns, I noticed that there was a general trend of more Black and White populations that were in jail than any other population. Afterwards, I created a graph to show the variety of races in America that are in jail based on the entire time given in this data set. There was still a question of searching for more trends in racial injustice and so I explored the data set more in hope of discovering why there are certain populations that are facing the racial injustice of having higher numbers in jail and in certain regions of the United States and at different times.
+
+
+## 5 relevant values
+
+My 5 relevant values of interest are mostly correlated to White and Black jail population on the entire timeline given. To answer these interests, I proposed the following questions:
+
+ - What is the race with the highest population in jail?
+
+After I graphed the trends including the population of all races in jail in all years, the relevant value for the race with the highest population, was in highest_total_race.
+
+ - What year had the highest number of Black populations in jail?
+
+I followed the trends that include the population of all races in jail in all years, a relevant value that stood out to me was the Black populations in jail, so I found the year with the highest population in jail, in Year_of_highest_black_pop.
+
+
+ - What is the ratio of Black to White population in jail in the year 2012?
+
+I graphed variables of comparison between of the White and Black populations in jail in all years, a relevant value that stood out to me was the comparison between Black and White populations in jail in a recent year of 2012, so I found the ratio of Black to White population in jail, in ratio_in_2012.
+
+ - What is the highest average of Black population in jail in any given year?
+
+I got the variables of comparison between of the White and Black populations in jail in all years, a relevant value that stood out to me was the average Black populations in jail, so I found the number of the highest average Black population in jail, in highest_avg_black.
+
+ - What is the highest average of White population in jail in any given year?
+
+As I graphed variables of comparison between of the White and Black populations in jail in all years, a relevant value that stood out to me was the average White populations in jail, so I found the number of the highest average White population in jail, in highest_avg_white.
+
+
+
+
+## Trends Over Time Chart
+I chose this graph as the first graph to analyze data in because it was the most inclusive of the dataset I was looking for. To fully filter out the populations experiencing the most racial bias within the United States throughout all of time, I decided to find trends for all races and their populations in jail. This graph was the primary step that allowed me to answer my first inquiries of which specific races had the highest populations, which are prominent based on the trends in my graph. The clear pattern that emerged was the great escalation of White and Black populations in jail in recent years.
+
+
+```{r, echo=FALSE, warning=FALSE}
+line_chart
+```
+
+## Variable Comparison Chart 
+The data on this graph was the most reasonable for a variable comparison graph because I was able to extract my data from the previous graph onto this one to narrow down my initial purpose of analysis. Knowing which populations experienced the most racial bias within the United States throughout all of time, I decided to find trends for these two races and compare them yearly on points. This graph made it easier to discover what years the populations, either White or Black, specifically started increasing so dramatically. The 1990s-2000s timeline had a fairly similar plot of populations in jail, and in the 2000-2020s timeline I can start to see an increasing disparity between the two compared populations in jail.
+
+
+```{r, echo=FALSE, warning=FALSE}
+scatter_plot
+```
+
+## Map
+This map gave me a general idea of what states or regions of the United States had more Black populations in jail. With the knowledge that the Black populations in jail was the only minority population that differed greatly from the rest of the minorities, I chose to map out the Black populations in jail nationwide. I looked for trends in certain states and where there was a higher Black population in jail. The states in the south had the highest Black populations in jail, and following that was the Eastern states. This inspection pushed me to think about how these findings were relevant to political standings of these specific states. 
+```{r, echo=FALSE, warning=FALSE}
+total_black_pop_map
+```
